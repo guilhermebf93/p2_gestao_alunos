@@ -19,11 +19,11 @@
 
       <label for="email">Email</label>
       <input type="email" name="email" id="email" th:field="*{email}" placeholder="Ex: joao.silva01@fatec.sp.gov.br" required>
-      <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></span>
-      <span th:if="${#fields.hasErrors('matricula')}" th:errors="*{matricula}" style="color: red;"></span>
+      <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></span>      
 
       <label for="matricula">Matrícula</label>
       <input type="text" name="matricula" id="matricula" th:field="*{matricula}" placeholder="Ex: 1234567890" required>
+      <span th:if="${#fields.hasErrors('matricula')}" th:errors="*{matricula}" style="color: red;"></span>
 
       <p th:if="${cursos.empty}" style="color: red; margin-bottom: 10px;">Nenhum Curso Cadastrado. Adicione algum curso
         para poder associar algum aluno.</p>
