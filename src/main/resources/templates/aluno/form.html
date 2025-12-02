@@ -13,19 +13,22 @@
     <h1 class="title">Cadastro de Aluno</h1>
 
     <form th:action="@{/alunos/salvar}" th:object="${aluno}" method="post">
-      <label for="nome">Nome:</label>
-      <input type="text" name="nome" id="nome" th:field="*{nome}" required>
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" th:field="*{nome}" placeholder="Ex: João Silva" required>
+      <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" style="color: red;"></span>
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" th:field="*{email}">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" th:field="*{email}" placeholder="Ex: joao.silva01@fatec.sp.gov.br" required>
+      <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></span>
+      <span th:if="${#fields.hasErrors('matricula')}" th:errors="*{matricula}" style="color: red;"></span>
 
-      <label for="matricula">Matricula</label>
-      <input type="text" name="matricula" id="matricula" th:field="*{matricula}" required>
+      <label for="matricula">Matrícula</label>
+      <input type="text" name="matricula" id="matricula" th:field="*{matricula}" placeholder="Ex: 1234567890" required>
 
       <p th:if="${cursos.empty}" style="color: red; margin-bottom: 10px;">Nenhum Curso Cadastrado. Adicione algum curso
         para poder associar algum aluno.</p>
 
-      <label for="cursos">Curso:</label>
+      <label for="cursos">Curso</label>
       <select name="cursos" id="cursos" th:field="*{curso}">
         <option th:each="curso: ${cursos}" th:value="${curso.id}" th:text="${curso.nome}">Selecione o curso</option>
       </select>

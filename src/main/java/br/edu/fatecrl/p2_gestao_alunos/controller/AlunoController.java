@@ -12,6 +12,9 @@ import br.edu.fatecrl.p2_gestao_alunos.repository.AlunoRepository;
 import br.edu.fatecrl.p2_gestao_alunos.repository.CursoRepository;
 import lombok.RequiredArgsConstructor;
 
+import jakarta.validation.Valid; 
+import org.springframework.validation.BindingResult;
+
 /**
  *
  * @author gui
@@ -38,7 +41,13 @@ public class AlunoController {
   }
 
   @PostMapping("/salvar")
-  public String salvar(@ModelAttribute Aluno aluno) {
+  public String salvar(@Valid @ModelAttribute Aluno aluno, BindingResult result, Model model) {
+
+    if (result.hasErrors()) {
+      model.addAttribute("cursos", cursoRepository.findAll());
+      return "aluno/form";
+    }
+
     alunoRepository.save(aluno);
     return "redirect:/alunos";
   }

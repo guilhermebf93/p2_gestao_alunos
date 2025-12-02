@@ -13,9 +13,11 @@
     <form th:action="@{/cursos/salvar}" th:object="${curso}" method="post">
       <label for="nome">Nome:</label>
       <input type="text" name="nome" id="nome" th:field="*{nome}" required>
+      <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" style="color: red;"></span>
 
       <label for="cargaHoraria">Carga Horária: </label>
       <input type="number" name="cargaHoraria" id="cargaHoraria" th:field="*{cargaHoraria}" required>
+      <span th:if="${#fields.hasErrors('cargaHoraria')}" th:errors="*{cargaHoraria}" style="color: red;"></span>
 
       <label for="descricao">Descrição:</label>
       <textarea name="descricao" id="descricao" th:field="*{descricao}"></textarea>

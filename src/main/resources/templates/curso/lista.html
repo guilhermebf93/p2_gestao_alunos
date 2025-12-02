@@ -23,6 +23,9 @@
           <td th:text="${curso.descricao}">Descrição do Curso</td>
           <td th:text="${curso.cargaHoraria}">Carga Horária do Curso</td>
         </tr>
+        <tr th:if="${#lists.isEmpty(cursos)}">
+                <td id="semCursos" colspan="4">Não há cursos cadastrados.</td>
+        </tr>
       </tbody>      
     </table>
     <div class="links">
