@@ -4,7 +4,7 @@ Este é um projeto de um sistema de Gestão de Alunos, desenvolvido em Java com 
 
 ## Tecnologias Utilizadas
 
-- **Java 17**
+- **Java 21**
 - **Spring Boot**: Framework principal para a construção da aplicação.
 - **Spring Web**: Para criar os controllers e endpoints REST.
 - **Spring Data JPA**: Para a persistência de dados.
@@ -38,20 +38,24 @@ src/main/java/br/edu/fatecrl/p2_gestao_alunos/
 ## Como Executar
 
 1. **Pré-requisitos**:
-   - JDK 17 ou superior instalado.
+
+   - JDK 21 ou superior instalado.
    - Maven instalado (ou pode-se usar o Maven Wrapper incluído).
 
 2. **Clone o repositório**:
+
    ```bash
    git clone <url-do-repositorio>
    ```
 
 3. **Navegue até o diretório do projeto**:
+
    ```bash
    cd p2_gestao_alunos
    ```
 
 4. **Execute a aplicação usando o Maven Wrapper**:
+
    - No Linux/macOS:
      ```bash
      ./mvnw spring-boot:run
